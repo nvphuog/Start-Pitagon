@@ -56,7 +56,7 @@ namespace Md5
                 byte[] all = deCodeByte(inputPass);
                 Console.WriteLine("DeCode: " + deCode(all));
                 
-                Console.WriteLine("DeCode" + inputPass);
+                Console.WriteLine("DeCode: " + inputPass);
             }
         }
     }
