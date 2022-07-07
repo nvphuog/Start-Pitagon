@@ -5,15 +5,8 @@ namespace Project1
 {
     internal class Program
     {
-        //private string[] i;
         public static string mahoa(string pass)
         {
-            // byte[] array = Encoding.ASCII.GetBytes(pass);
-            // for (int j = 0; j < array.Length; j++)
-            // {
-            //     return Convert.ToString(array.ToString());
-            // }
-            
             string mahoa1 = "";
             for (int i = 0; i < pass.Length; i++)
             {
@@ -30,36 +23,35 @@ namespace Project1
             }
             return mahoa1;
         }
-
-        public static string giama(byte[] pass)
-        {
-            return Encoding.ASCII.GetString(pass);
-        }
-        public static byte[] Bytesy(string pass)
+        public static byte[] giaimaByte(string pass)
         {
             return Encoding.ASCII.GetBytes(pass);
+        }
+        public static string giaima(byte[] pass)
+        {
+            return Encoding.ASCII.GetString(pass);
         }
         static void Main(string[] args)
         {
             for (int j = 0; j < 10; j++)
             {
                 string pass;
-                Console.WriteLine("Nhap chuoi can ma hoa:");
-
-                //ma hoa
+                Console.WriteLine("Nhap password can ma hoa:");
                 pass = Console.ReadLine();
-                Console.WriteLine(mahoa(pass));
 
-                //string to byte
+                //enCode
+                Console.WriteLine("Ma hoa: " + mahoa(pass));
+                //enCode
                 byte[] array = Encoding.ASCII.GetBytes(pass);
                 for (int k = 0; k < array.Length; k++)
                 {
-                    Console.WriteLine(array[k]);
+                    Console.WriteLine("Ma hoa: " + array[k]);
                 }
-
-                //giai ma
-                byte[] all = Bytesy(pass);
-                Console.WriteLine(giama(all));
+                //deCode
+                byte[] all = giaimaByte(pass);
+                Console.WriteLine(giaima(all));
+                //deCode
+                Console.WriteLine("DeCode" + pass);
             }
             
         }
