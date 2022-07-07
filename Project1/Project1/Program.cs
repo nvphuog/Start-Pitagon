@@ -10,7 +10,7 @@ namespace Project1
             string mahoa1 = "";
             for (int i = 0; i < pass.Length; i++)
             {
-                if (pass[i] >= 33 && pass[i] <= 122 - 33)
+                if (pass[i] >= 1 && pass[i] <= 100)
                 {
                     char abc = Convert.ToChar(pass[i] + '1');
                     mahoa1 += abc;
@@ -39,19 +39,18 @@ namespace Project1
                 Console.WriteLine("Nhap password can ma hoa:");
                 pass = Console.ReadLine();
 
-                //enCode
                 Console.WriteLine("Ma hoa: " + mahoa(pass));
-                //enCode
+                 
                 byte[] array = Encoding.ASCII.GetBytes(pass);
                 for (int k = 0; k < array.Length; k++)
                 {
-                    Console.WriteLine("Ma hoa: " + array[k]);
+                    Console.Write("Ma hoa: " + array[k] +",\n");
                 }
-                //deCode
+                
                 byte[] all = giaimaByte(pass);
                 Console.WriteLine(giaima(all));
-                //deCode
-                Console.WriteLine("DeCode" + pass);
+
+                Console.WriteLine("DeCode: " + pass);
             }
             
         }
