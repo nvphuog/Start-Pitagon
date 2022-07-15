@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Pitagon.vn\\Start New\\New Pitagon\\project1-Pitogon\\Project1\\Project1\\Project1.csproj",
+      "projectUniqueName": "E:\\Pitagon.vn\\Start New\\New Pitagon\\Start-Pitagon\\Project1\\Project1\\Project1.csproj",
       "projectName": "Project1",
-      "projectPath": "E:\\Pitagon.vn\\Start New\\New Pitagon\\project1-Pitogon\\Project1\\Project1\\Project1.csproj",
+      "projectPath": "E:\\Pitagon.vn\\Start New\\New Pitagon\\Start-Pitagon\\Project1\\Project1\\Project1.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\Pitagon.vn\\Start New\\New Pitagon\\project1-Pitogon\\Project1\\Project1\\obj\\",
+      "outputPath": "E:\\Pitagon.vn\\Start New\\New Pitagon\\Start-Pitagon\\Project1\\Project1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

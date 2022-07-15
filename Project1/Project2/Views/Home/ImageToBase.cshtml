@@ -1,0 +1,53 @@
+﻿@model FileImage
+@{
+    ViewData["Title"] = "ImageToBase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var load = ViewData["Image"] as string;
+}
+<head>
+    <link href="~/assets/css/app.min.css" rel="stylesheet">
+</head>
+
+<h1 class="text-center mt-3">Image To Base64</h1>
+
+<form class="mt-3" asp-action="ImageToBase" method="post" enctype="multipart/form-data">
+    <div class="col-12">
+        <div>
+            <a class="btn btn-primary m-r-5" asp-controller="Home" asp-action="Index">Number To String</a>
+            <a class="btn btn-info m-r-5" asp-controller="Home" asp-action="StringToBase64">String To Base64</a>
+            <a class="btn btn-warning m-r-5" asp-controller="Home" asp-action="StringToByte">String To Byte</a>
+            <a class="btn btn-secondary m-r-5" asp-controller="Home" asp-action="ImageToBase">Image To Base64</a>
+            <a class="btn btn-success m-r-5" asp-controller="Home" asp-action="Base64ToImage">Base64 To Image</a>
+        </div>
+        <div class="text-center">
+            <input class=" btn btn-dark mt-3 img-fluid" type="file" asp-for="Image" onchange="chooseFile(this)" multiple />
+            <img class="col-4 mt-3" width="150" height="300" alt="" id="image"/>
+        </div>
+        
+    </div>
+    <div class="col-12 text-center mt-3">
+        <button class="btn btn-danger btn-tone m-r-5 btn-xs" type="submit">
+            <i class="anticon anticon-sync"></i>
+        </button>
+    </div>
+    <div class="col-12">
+        <textarea rows="3" class="form-control mt-3" placeholder="Bản Dịch">
+            @if (load != null)
+            {
+                @load
+            }
+        </textarea>
+    </div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function chooseFile(fileInput) {
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+</script>
